@@ -45,6 +45,6 @@ class Wrapper:
             g=int(test_color[1]*255)
             b=int(test_color[2]*255)
             print(r,g,b)
-            self.strip.setPixelColor(i,Color(r,g,b)
+            self.strip.setPixelColor(i,Color(r,g,b))
             
         self.strip.show()
