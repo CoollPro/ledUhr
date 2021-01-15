@@ -8,7 +8,6 @@ class Wrapper:
     def __init__(self,strip):
         self.strip=strip
         self.ledArray=[]
-        self.strip.pixelcount
 
         for i in range (strip.numPixel()):
             self.ledArray.append([0,0,0])
