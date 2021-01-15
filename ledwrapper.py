@@ -39,5 +39,5 @@ class Wrapper:
             test_color = colorsys.hsv_to_rgb(color[0],color[1],color[2])
             self.strip.setPixelColor(i,Color(test_color[0],test_color[1],test_color[2]))
             print(test_color)
-            
+
         self.strip.show()
