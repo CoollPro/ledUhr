@@ -26,8 +26,11 @@ class Wrapper:
    
 
     def setAllColour (self,h):
+        print(self.ledArray)
         for i in self.ledArray:
             i[0]=h        
+        print(self.ledArray)
+
 
     def setHelligkeit(self,v):
         for i in self.ledArray:
