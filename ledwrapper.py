@@ -41,7 +41,11 @@ class Wrapper:
         for (i,color) in enumerate(self.ledArray):
             test_color = colorsys.hsv_to_rgb(color[0],color[1],color[2])
             print(test_color)
-            self.strip.setPixelColor(i,Color(int(test_color[0]*255),int(test_color[1]*255),int(test_color[2])*255))
+            r=int(test_color[0]*255)
+            g=int(test_color[1]*255)
+            b=int(test_color[2]*255)
+            print(r,g,b)
+            self.strip.setPixelColor(i,Color(r,g,b)
             
 
         self.strip.show()
