@@ -31,7 +31,7 @@ class Wrapper:
 
     def setHelligkeit(self,v):
         for i in self.ledArray:
-            i[0]=v
+            i[2]=v
 
     def ausgeben(self):
         
