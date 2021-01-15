@@ -9,7 +9,7 @@ class Wrapper:
         self.strip=strip
         self.ledArray=[]
 
-        for i in range (strip.numPixel()):
+        for i in range (strip.numPixels()):
             self.ledArray.append([0,0,0])
 
         self.ausgeben()
