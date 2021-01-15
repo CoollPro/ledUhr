@@ -37,8 +37,8 @@ class Wrapper:
             i[2]=v
 
     def setAllSaturation(self,s):
-    for i in self.ledArray:
-        i[1]=s
+        for i in self.ledArray:
+            i[1]=s
 
 
     def ausgeben(self):
