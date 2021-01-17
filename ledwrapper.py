@@ -50,10 +50,10 @@ class Wrapper:
         self.buffer=[]
         buffer=self.zahl_zu_bit(zahl)
         self.merke=(reihe*8)
-        print(buffer)
+        
 
         for i in range (self.merke,(self.merke+31)):
-            print(self.buffer[0])
+            
             self.bufferIndex=i-self.merke
 
             if (buffer[self.bufferIndex])==1:
