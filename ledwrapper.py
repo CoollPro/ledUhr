@@ -46,17 +46,15 @@ class Wrapper:
     
 
     def zahl_speichern(self,zahl,reihe,helligkeit):
+
         self.buffer=[]
         buffer=self.zahl_zu_bit(zahl)
         self.merke=(reihe*8)
-
-        
+    print(buffer)
 
         for i in range (self.merke,(self.merke+31)):
-
+            print(buffer)
             self.bufferIndex=i-self.merke
-            print(self.bufferIndex)
-            print(self.buffer[0])
 
             if self.buffer[self.bufferIndex]==1:
                 self.ledArray[i][2]=helligkeit
