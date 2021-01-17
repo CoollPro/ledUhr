@@ -20,6 +20,6 @@ wrapper=ledwrapper.Wrapper(strip)
 wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.5)
-wrapper.zahl_speichern(5,2,0.1)
+wrapper.zahl_speichern(9,2,0.1)
 wrapper.ausgeben()
     
