@@ -52,7 +52,7 @@ class Wrapper:
         self.merke=(reihe*8)
         
 
-        for i in range (self.merke,(self.merke+31)):
+        for i in range (self.merke,(self.merke+32)):
             
             self.bufferIndex=i-self.merke
 
