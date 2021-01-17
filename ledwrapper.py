@@ -50,10 +50,10 @@ class Wrapper:
         buffer=self.zahl_zu_bit(zahl)
         self.merke=(reihe*8)
 
-        print(buffer[0])
+        
 
         for i in range (self.merke,(self.merke+31)):
-
+            print(i)
             if self.buffer[i-(self.merke)]==1:
                 self.ledArray[i][2]=helligkeit
 
