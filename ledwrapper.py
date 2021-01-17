@@ -8,6 +8,7 @@ class Wrapper:
     def __init__(self,strip):
         self.strip=strip
         self.ledArray=[]
+        
 
         for i in range (strip.numPixels()):
             self.ledArray.append([0,0,0])
@@ -20,10 +21,42 @@ class Wrapper:
         self.ledArray[index]=[h,s,v]        
         
 
-    def zahl_zu_bit(self, zahl,reihe):
+    def zahl_zu_bit(self, zahl):
         '''eine Zahl von 0 bis 9 in Bitmuster'''
+        if zahl == 0:
+            return[1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]
+        elif zahl == 1:
+            return[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+        elif zahl == 2:
+            return[1,0,0,0,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,0,0,1]
+        elif zahl == 3:
+            return[1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1]
+        elif zahl == 4:
+            return[1,1,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1]
+        elif zahl == 5:
+            return[1,1,1,1,1,0,0,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,0,0,0,1,1,1,1]
+        elif zahl == 6:
+            return[1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,0,0,0,1,1,1,1]
+        elif zahl == 7:
+            return[1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+        elif zahl == 8:
+            return[1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1]
+        elif zahl == 9:
+            return[1,1,1,1,1,0,0,0,1,1,0,0,0,1,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1]
+    
 
-   
+   def zahl_speichern(self,zahl,reihe,helligkeit):
+       self.buffer[]
+       buffer=self.zahl_zu_bit(zahl)
+
+       for i in range ((reihe*8),((reihe*8)+31)):
+           if self.buffer[i]==1:
+                self.ledArray[i][2]=helligkeit
+            elif self.buffer[i]==0:
+                self.ledArray[i][2]=,0   
+                
+    
+
 
     def setAllColour (self,h):
         print(self.ledArray)

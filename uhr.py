@@ -17,8 +17,9 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 # Intialize the library (must be called once before other functions).
 strip.begin()
 wrapper=ledwrapper.Wrapper(strip)
-wrapper.setHelligkeit(0.1)
+wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.5)
+wrapper.zahl_speichern(5,2,0.1)
 wrapper.ausgeben()
     
