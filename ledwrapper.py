@@ -49,21 +49,20 @@ class Wrapper:
         self.buffer=[]
         buffer=self.zahl_zu_bit(zahl)
         self.merke=(reihe*8)
-        
-        for i in range (merke,(merke+31)):
-            if self.buffer[i-merke]==1:
+
+        for i in range (self.merke,(self.merke+31)):
+            if self.buffer[i-self.merke]==1:
                 self.ledArray[i][2]=helligkeit
-            elif self.buffer[i-merke]==0:
+            elif self.buffer[i-self.merke]==0:
                 self.ledArray[i][2]=0   
                 
     
 
 
     def setAllColour (self,h):
-        print(self.ledArray)
         for i in self.ledArray:
             i[0]=h        
-        print(self.ledArray)
+        
 
 
     def setHelligkeit(self,v):
@@ -79,11 +78,9 @@ class Wrapper:
         
         for (i,color) in enumerate(self.ledArray):
             test_color = colorsys.hsv_to_rgb(color[0],color[1],color[2])
-            print(test_color)
             r=int(test_color[0]*255)
             g=int(test_color[1]*255)
             b=int(test_color[2]*255)
-            print(r,g,b)
             self.strip.setPixelColor(i,Color(r,g,b))
             
         self.strip.show()
