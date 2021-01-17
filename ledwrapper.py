@@ -53,8 +53,10 @@ class Wrapper:
         
 
         for i in range (self.merke,(self.merke+31)):
+
             self.bufferIndex=i-self.merke
             print(self.bufferIndex)
+
             if self.buffer[self.bufferIndex]==1:
                 self.ledArray[i][2]=helligkeit
 
