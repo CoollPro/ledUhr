@@ -46,7 +46,7 @@ class Wrapper:
     
 
    def zahl_speichern(self,zahl,reihe,helligkeit):
-       self.buffer[]
+       self.buffer=[]
        buffer=self.zahl_zu_bit(zahl)
 
        for i in range ((reihe*8),((reihe*8)+31)):
