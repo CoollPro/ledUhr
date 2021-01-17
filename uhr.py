@@ -19,12 +19,12 @@ strip.begin()
 wrapper=ledwrapper.Wrapper(strip)
 wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
-wrapper.setAllColour(0.7)
-wrapper.zahl_speichern(5,0,0.1) #zahlen müssen im geraden Bereich sein
-wrapper.zahl_speichern(6,6,0.1)
-wrapper.zahl_speichern(7,12,0.1)
-wrapper.zahl_speichern(8,18,0.1)
-wrapper.zahl_speichern(9,24,0.1)
+wrapper.setAllColour(0.2)
+wrapper.zahl_speichern(5,0,1) #zahlen müssen im geraden Bereich sein
+wrapper.zahl_speichern(6,6,1)
+wrapper.zahl_speichern(7,12,1)
+wrapper.zahl_speichern(8,18,1)
+wrapper.zahl_speichern(9,24,1)
 
 
 wrapper.ausgeben()
