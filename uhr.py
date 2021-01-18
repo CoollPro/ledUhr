@@ -26,5 +26,6 @@ wrapper.setAllColour(0.84)
 while 1:
     for i in range (100):
         wrapper.doppelte_zahl_speichern(i,1,0.2)
+        wrapper.doppelte_zahl_speichern(i,20,0.2)
         wrapper.ausgeben()
         time.sleep(0.5)
