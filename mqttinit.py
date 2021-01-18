@@ -9,7 +9,7 @@ class MQTT_Handler:
                                                                          message.qos,
                                                                          message.retain)
         print(text)
-        self.ledcontroll()
+        #self.ledcontroll()
 
 
     def __init__(self,ledcontroll):
@@ -17,7 +17,8 @@ class MQTT_Handler:
         self.client.on_message = self.on_message
         self.client.on_connect = self.on_connect
         self.client.connect(mqttconfig.broker_adress, keepalive=60)
-        self.client.subscribe("LedUhrKontrolle")
+        self.client.subscribe("uhr/on")
+        self.client.subscribe("uhr/hsv")
         self.client.loop_start()
         self.ledcontroll=ledcontroll
 

@@ -25,7 +25,7 @@ wrapper.setAllColour(0.84)
 wrapper.setpixel(((9*8)),0.64,1,0.2)
 wrapper.setpixel((21*8),0.64,1,0.2)
 
-mqtt=mqttinit.MQTT_Handler()
+mqtt=mqttinit.MQTT_Handler(wrapper.lichtEinstellen)
 
 brightness=0.2
 
