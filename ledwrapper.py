@@ -61,7 +61,7 @@ class Wrapper:
                 self.ledArray[i][2]=0   
                 
     
-    def doppelte_zahl_speichern(self,zahl,reihe,helligkeit)
+    def doppelte_zahl_speichern(self,zahl,reihe,helligkeit):
         self.doppelpack=str(zahl)
         
         if len(doppelpack)==1:
