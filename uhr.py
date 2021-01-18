@@ -2,6 +2,8 @@ import time
 from rpi_ws281x import *
 import argparse
 import ledwrapper
+from datetime import datetime
+
 
 # LED strip configuration:
 LED_COUNT      = 256      # Number of LED pixels.
@@ -20,11 +22,7 @@ wrapper=ledwrapper.Wrapper(strip)
 wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.84)
-wrapper.zahl_speichern(5,0,0.5) #zahlen müssen im geraden Bereich sein
-wrapper.zahl_speichern(6,6,0.5)
-wrapper.zahl_speichern(7,12,0.5)
-wrapper.zahl_speichern(8,18,0.5)
-wrapper.zahl_speichern(9,24,0.5)
+ wrapper.doppelte_zahl_speichern(10,0,0.2)
 
 
 wrapper.ausgeben()

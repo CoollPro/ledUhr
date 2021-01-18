@@ -1,7 +1,6 @@
 from rpi_ws281x import *
 import colorsys
 
-
 class Wrapper:
 
 
@@ -45,12 +44,11 @@ class Wrapper:
             return[1,1,1,1,1,0,0,1,1,0,0,1,0,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1]
     
 
-    def zahl_speichern(self,zahl,reihe,helligkeit):
-
+    def einzel_zahl_speichern(self,zahl,reihe,helligkeit):
+        #zahlen müssen im geraden Bereich sein
         self.buffer=[]
         buffer=self.zahl_zu_bit(zahl)
         self.merke=(reihe*8)
-        
 
         for i in range (self.merke,(self.merke+32)):
             
@@ -63,6 +61,15 @@ class Wrapper:
                 self.ledArray[i][2]=0   
                 
     
+    def doppelte_zahl_speichern(self,zahl,reihe,helligkeit)
+        self.doppelpack=str(zahl)
+        
+        if len(doppelpack)==1:
+            self.einzel_zahl_speichern(0,reihe,helligkeit)
+            self.einzel_zahl_speichern(zahl,reihe+6,helligkeit)
+        elif len(doppelpack)==2:
+            self.einzel_zahl_speichern(int(doppelpack[0]),reihe,helligkeit)
+            self.einzel_zahl_speichern(int(doppelpack[1]),reihe+6,helligkeit)
 
 
     def setAllColour (self,h):
