@@ -20,7 +20,7 @@ class Wrapper:
         self.ledArray[index]=[h,s,v]        
         
 
-    def zahl_zu_bit(self, zahl):
+    def zahl_zu_bit_geradeReihe(self, zahl):
         '''eine Zahl von 0 bis 9 in Bitmuster'''
         if zahl == 0:
             return[1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]
@@ -44,10 +44,37 @@ class Wrapper:
             return[1,1,1,1,1,0,0,1,1,0,0,1,0,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1]
     
 
+    def zahl_zu_bit_ungeradeReihe(self, zahl):
+    '''eine Zahl von 0 bis 9 in Bitmuster'''
+    if zahl == 0:
+        return[1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]
+    elif zahl == 1:
+        return[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+    elif zahl == 2:
+        return[1,1,1,1,0,0,0,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,0,0,1]
+    elif zahl == 3:
+        return[1,0,0,1,0,0,0,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1]
+    elif zahl == 4:
+        return[0,0,0,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1]
+    elif zahl == 5:
+        return[1,0,0,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,0,0,0,1,1,1,1]
+    elif zahl == 6:
+        return[1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,0,0,0,1,1,1,1]
+    elif zahl == 7:
+        return[0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]
+    elif zahl == 8:
+        return[1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1]
+    elif zahl == 9:
+        return[1,0,0,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1]
+
     def einzel_zahl_speichern(self,zahl,reihe,helligkeit):
         #zahlen müssen im geraden Bereich sein
         self.buffer=[]
-        buffer=self.zahl_zu_bit(zahl)
+        if reihe % 2:
+            buffer=self.zahl_zu_bit_ungeradeReihe(zahl)
+        else:
+            buffer=self.zahl_zu_bit_geradeReihe(zahl)
+
         self.merke=(reihe*8)
 
         for i in range (self.merke,(self.merke+32)):

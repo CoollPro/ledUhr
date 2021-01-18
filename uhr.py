@@ -22,10 +22,12 @@ wrapper=ledwrapper.Wrapper(strip)
 wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.84)
-wrapper.doppelte_zahl_speichern(9,0,0.2)
-wrapper.doppelte_zahl_speichern(60,12,0.2)
+
+while 1:
+    for i in range 100:
+    doppelte_zahl_speichern(i,1,0.2)
+    wrapper.ausgeben()
 
 
 
-wrapper.ausgeben()
     
