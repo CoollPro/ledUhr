@@ -68,8 +68,8 @@ class Wrapper:
             self.einzel_zahl_speichern(0,reihe,helligkeit)
             self.einzel_zahl_speichern(zahl,reihe+6,helligkeit)
         elif len(self.doppelpack)==2:
-            self.einzel_zahl_speichern(int(doppelpack[0]),reihe,helligkeit)
-            self.einzel_zahl_speichern(int(doppelpack[1]),reihe+6,helligkeit)
+            self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,helligkeit)
+            self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+6,helligkeit)
 
 
     def setAllColour (self,h):
