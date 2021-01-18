@@ -22,7 +22,7 @@ wrapper=ledwrapper.Wrapper(strip)
 wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.84)
-wrapper.setpixel(((10*8)-1),0.64,1,0.2)
+wrapper.setpixel(((19*8)),0.64,1,0.2)
 wrapper.setpixel((21*8),0.64,1,0.2)
 
 while True:
