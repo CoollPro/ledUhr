@@ -13,7 +13,7 @@ class MQTT_Handler:
         topic=message.topic
         if topic=="uhr/hsv":
             hsv=msg.split(",")
-            self.ledcontroll(hsv[0],hsv[1],hsv[2])
+            self.ledcontroll(int(hsv[0]),int(hsv[1]),int(hsv[2]))
 
 
         #self.ledcontroll()
