@@ -53,7 +53,7 @@ class Wrapper:
         elif zahl == 2:
             return[1,1,1,1,0,0,0,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,0,0,1]
         elif zahl == 3:
-            return[1,0,0,1,0,0,0,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1]
+            return[1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1]
         elif zahl == 4:
             return[0,0,0,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,1,1,1,1]
         elif zahl == 5:
@@ -93,7 +93,7 @@ class Wrapper:
         
         if len(self.doppelpack)==1:
             self.einzel_zahl_speichern(0,reihe,helligkeit)
-            self.einzel_zahl_speichern(zahl,reihe+6,helligkeit)
+            self.einzel_zahl_speichern(zahl,reihe+5,helligkeit)
         elif len(self.doppelpack)==2:
             self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,helligkeit)
             self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+6,helligkeit)
