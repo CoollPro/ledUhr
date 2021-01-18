@@ -30,5 +30,5 @@ while True:
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,0.2,0.5)
     wrapper.doppelte_zahl_speichern(currentTime.minute,12,0.2,0.5)
     wrapper.doppelte_zahl_speichern(currentTime.second,23,0.2,0)
-    time.sleep(0.2)
     wrapper.ausgeben()
+    time.sleep(1000/60)
