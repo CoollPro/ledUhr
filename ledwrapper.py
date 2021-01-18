@@ -64,10 +64,10 @@ class Wrapper:
     def doppelte_zahl_speichern(self,zahl,reihe,helligkeit):
         self.doppelpack=str(zahl)
         
-        if len(doppelpack)==1:
+        if len(self.doppelpack)==1:
             self.einzel_zahl_speichern(0,reihe,helligkeit)
             self.einzel_zahl_speichern(zahl,reihe+6,helligkeit)
-        elif len(doppelpack)==2:
+        elif len(self.doppelpack)==2:
             self.einzel_zahl_speichern(int(doppelpack[0]),reihe,helligkeit)
             self.einzel_zahl_speichern(int(doppelpack[1]),reihe+6,helligkeit)
 
