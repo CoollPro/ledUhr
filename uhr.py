@@ -4,6 +4,7 @@ import argparse
 import ledwrapper
 from datetime import datetime
 import mqttinit
+import pytz
 
 # LED strip configuration:
 LED_COUNT      = 256      # Number of LED pixels.
@@ -27,12 +28,12 @@ wrapper.setpixel((21*8),0.64,1,0.2)
 
 mqtt=mqttinit.MQTT_Handler(wrapper.lichtEinstellen)
 
-
+tz = pytz.timezone('Europe/Berlin')
 
 
 while True:
     
-    currentTime=datetime.now()
+    currentTime=datetime.now(tz)
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,wrapper.farbeStunde_Miute)
     wrapper.doppelte_zahl_speichern(currentTime.minute,12,wrapper.farbeStunde_Miute)
     wrapper.doppelte_zahl_speichern(currentTime.second,23,wrapper.farbeSekunde)
