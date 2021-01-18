@@ -3,11 +3,14 @@ import colorsys
 
 class Wrapper:
 
+   
 
     def __init__(self,strip):
         self.strip=strip
         self.ledArray=[]
-        
+        self.farbeStunde_Miute=0
+        self.farbeSekunde=0
+        self.brightness=0
 
         for i in range (strip.numPixels()):
             self.ledArray.append([0,0,0])
@@ -64,7 +67,7 @@ class Wrapper:
         elif zahl == 9:
             return[1,0,0,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1]
 
-    def einzel_zahl_speichern(self,zahl,reihe,helligkeit,farbe):
+    def einzel_zahl_speichern(self,zahl,reihe,farbe):
         #zahlen müssen im geraden Bereich sein
         self.buffer=[]
         if reihe % 2:
@@ -79,22 +82,22 @@ class Wrapper:
             self.bufferIndex=i-self.merke
 
             if (buffer[self.bufferIndex])==1:
-                self.ledArray[i][2]=helligkeit
+                self.ledArray[i][2]=self.birghtness
                 self.ledArray[i][0]=farbe
 
             elif (buffer[self.bufferIndex])==0:
                 self.ledArray[i][2]=0   
                 self.ledArray[i][0]=farbe
     
-    def doppelte_zahl_speichern(self,zahl,reihe,helligkeit,farbe):
+    def doppelte_zahl_speichern(self,zahl,reihe,farbe):
         self.doppelpack=str(zahl)
         
         if len(self.doppelpack)==1:
-            self.einzel_zahl_speichern(0,reihe,helligkeit,farbe)
-            self.einzel_zahl_speichern(zahl,reihe+5,helligkeit,farbe)
+            self.einzel_zahl_speichern(0,reihe,farbe)
+            self.einzel_zahl_speichern(zahl,reihe+5,farbe)
         elif len(self.doppelpack)==2:
-            self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,helligkeit,farbe)
-            self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,helligkeit,farbe)
+            self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,farbe)
+            self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,farbe)
 
     def setAllColour (self,h):
         for i in self.ledArray:
@@ -119,5 +122,8 @@ class Wrapper:
             
         self.strip.show()
 
-    def lichtEinstellen(wert):
-        setHelligkeit(wert)
+    def lichtEinstellen(self,h,s,v):
+        self.brightness=v
+        self.farbeStunde_Miute=(h/255)
+        self.farbeSekunde=(h/255)+0.3
+        self.setAllSaturation(s)

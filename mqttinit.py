@@ -9,6 +9,13 @@ class MQTT_Handler:
                                                                          message.qos,
                                                                          message.retain)
         print(text)
+        msg=message.payload.decode("utf-8")
+        topic=message.topic
+        if topic=="uhr/hsv":
+            hsv=msg.split(",")
+            self.ledcontroll(hsv[0],hsv[1],hsv[2])
+
+
         #self.ledcontroll()
 
 
