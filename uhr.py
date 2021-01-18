@@ -3,7 +3,7 @@ from rpi_ws281x import *
 import argparse
 import ledwrapper
 from datetime import datetime
-
+import mqttinit
 
 # LED strip configuration:
 LED_COUNT      = 256      # Number of LED pixels.
@@ -24,6 +24,10 @@ wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.84)
 wrapper.setpixel(((9*8)),0.64,1,0.2)
 wrapper.setpixel((21*8),0.64,1,0.2)
+
+mqtt=mqttinit.MQTT_Handler()
+
+
 
 while True:
     currentTime=datetime.now()
