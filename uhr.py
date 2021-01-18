@@ -27,12 +27,14 @@ wrapper.setpixel((21*8),0.64,1,0.2)
 
 mqtt=mqttinit.MQTT_Handler()
 
+brightness=0.2
 
 
 while True:
-    currentTime=datetime.now()
-    wrapper.doppelte_zahl_speichern(currentTime.hour,0,0.2,0.5)
-    wrapper.doppelte_zahl_speichern(currentTime.minute,12,0.2,0.5)
-    wrapper.doppelte_zahl_speichern(currentTime.second,23,0.2,0)
+    
+    currentTime=datetime.datetime.now(tz=pytz.timezone('Europe/Stockholm'))
+    wrapper.doppelte_zahl_speichern(currentTime.hour,0,brightness,0.5)
+    wrapper.doppelte_zahl_speichern(currentTime.minute,12,brightness,0.5)
+    wrapper.doppelte_zahl_speichern(currentTime.second,23,brightness,0)
     wrapper.ausgeben()
     time.sleep(60/1000)

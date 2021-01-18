@@ -14,12 +14,10 @@ class Wrapper:
 
         self.ausgeben()
 
-
     def setpixel(self,index,h,s,v):
         
         self.ledArray[index]=[h,s,v]        
         
-
     def zahl_zu_bit_geradeReihe(self, zahl):
         '''eine Zahl von 0 bis 9 in Bitmuster'''
         if zahl == 0:
@@ -43,7 +41,6 @@ class Wrapper:
         elif zahl == 9:
             return[1,1,1,1,1,0,0,1,1,0,0,1,0,0,0,1,1,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1]
     
-
     def zahl_zu_bit_ungeradeReihe(self, zahl):
         '''eine Zahl von 0 bis 9 in Bitmuster'''
         if zahl == 0:
@@ -99,12 +96,9 @@ class Wrapper:
             self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,helligkeit,farbe)
             self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,helligkeit,farbe)
 
-
     def setAllColour (self,h):
         for i in self.ledArray:
             i[0]=h        
-        
-
 
     def setHelligkeit(self,v):
         for i in self.ledArray:
@@ -113,7 +107,6 @@ class Wrapper:
     def setAllSaturation(self,s):
         for i in self.ledArray:
             i[1]=s
-
 
     def ausgeben(self):
         
@@ -125,3 +118,6 @@ class Wrapper:
             self.strip.setPixelColor(i,Color(r,g,b))
             
         self.strip.show()
+
+    def lichtEinstellen(wert):
+        setHelligkeit(wert)
