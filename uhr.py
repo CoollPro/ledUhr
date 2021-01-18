@@ -22,8 +22,8 @@ wrapper=ledwrapper.Wrapper(strip)
 wrapper.setHelligkeit(0.0)
 wrapper.setAllSaturation(1)
 wrapper.setAllColour(0.84)
-wrapper.setpixel((11*8+2),0.84,1,0.2)
-wrapper.setpixel((11*8+5),0.84,1,0.2)
+wrapper.setpixel((10*8+2),0.84,1,0.2)
+wrapper.setpixel((10*8+5),0.84,1,0.2)
 
 while 1:
     currentTime=datetime.now()
