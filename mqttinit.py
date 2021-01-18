@@ -12,8 +12,8 @@ class MQTT_Handler:
 
     def __init__(self):
         self.client = mqtt.Client()
-        self.client.on_message = on_message
-        self.client.on_connect = on_connect
+        self.client.on_message = self.on_message
+        self.client.on_connect = self.on_connect
         self.client.connect(mqttconfig.broker_adress, keepalive=60)
         self.client.subscribe("LedUhrKontrolle")
         self.client.loop_start()
