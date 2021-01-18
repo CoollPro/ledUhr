@@ -32,7 +32,7 @@ brightness=0.2
 
 while True:
     
-    currentTime=datetime.datetime.now(tz=pytz.timezone('Europe/Stockholm'))
+    currentTime=datetime.now()
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,brightness,0.5)
     wrapper.doppelte_zahl_speichern(currentTime.minute,12,brightness,0.5)
     wrapper.doppelte_zahl_speichern(currentTime.second,23,brightness,0)
