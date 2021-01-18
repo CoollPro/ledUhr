@@ -124,6 +124,6 @@ class Wrapper:
 
     def lichtEinstellen(self,h,s,v):
         self.brightness=v/100
-        self.farbeStunde_Miute=(h/255)
-        self.farbeSekunde=(h/255)+0.3
+        self.farbeStunde_Miute=(h/360)
+        self.farbeSekunde=(h/360)+0.3
         self.setAllSaturation(s/100)
