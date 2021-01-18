@@ -82,7 +82,7 @@ class Wrapper:
             self.bufferIndex=i-self.merke
 
             if (buffer[self.bufferIndex])==1:
-                self.ledArray[i][2]=self.birghtness
+                self.ledArray[i][2]=self.brightness
                 self.ledArray[i][0]=farbe
 
             elif (buffer[self.bufferIndex])==0:
