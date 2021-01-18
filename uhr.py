@@ -25,10 +25,10 @@ wrapper.setAllColour(0.84)
 wrapper.setpixel((10*8+2),0.84,1,0.2)
 wrapper.setpixel((10*8+5),0.84,1,0.2)
 
-while 1:
+while True:
     currentTime=datetime.now()
-    wrapper.doppelte_zahl_speichern(currentTime.hour,0,0.2)
-    wrapper.doppelte_zahl_speichern(currentTime.minute,12,0.2)
-    wrapper.doppelte_zahl_speichern(currentTime.second,23,0.2)
+    wrapper.doppelte_zahl_speichern(currentTime.hour,0,0.2,0.5)
+    wrapper.doppelte_zahl_speichern(currentTime.minute,12,0.2,0.5)
+    wrapper.doppelte_zahl_speichern(currentTime.second,23,0.2,0)
     time.sleep(0.2)
     wrapper.ausgeben()

@@ -67,7 +67,7 @@ class Wrapper:
         elif zahl == 9:
             return[1,0,0,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1]
 
-    def einzel_zahl_speichern(self,zahl,reihe,helligkeit):
+    def einzel_zahl_speichern(self,zahl,reihe,helligkeit,farbe):
         #zahlen müssen im geraden Bereich sein
         self.buffer=[]
         if reihe % 2:
@@ -83,20 +83,21 @@ class Wrapper:
 
             if (buffer[self.bufferIndex])==1:
                 self.ledArray[i][2]=helligkeit
+                self.ledArray[i][0]=farbe
 
             elif (buffer[self.bufferIndex])==0:
                 self.ledArray[i][2]=0   
-                
+                self.ledArray[i][0]=farbe
     
-    def doppelte_zahl_speichern(self,zahl,reihe,helligkeit):
+    def doppelte_zahl_speichern(self,zahl,reihe,helligkeit,farbe):
         self.doppelpack=str(zahl)
         
         if len(self.doppelpack)==1:
-            self.einzel_zahl_speichern(0,reihe,helligkeit)
-            self.einzel_zahl_speichern(zahl,reihe+5,helligkeit)
+            self.einzel_zahl_speichern(0,reihe,helligkeit,farbe)
+            self.einzel_zahl_speichern(zahl,reihe+5,helligkeit,farbe)
         elif len(self.doppelpack)==2:
-            self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,helligkeit)
-            self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,helligkeit)
+            self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,helligkeit,farbe)
+            self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,helligkeit,farbe)
 
 
     def setAllColour (self,h):
