@@ -135,7 +135,7 @@ class Wrapper:
     def setFlag (self,flag):
         self.flag=flag
         if flag==True:
-            brightness=0.35
+            self.brightness=0.35
 
     def automaticBrightness(self,morgen):
         if flag==True:
