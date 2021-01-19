@@ -26,6 +26,7 @@ class MQTT_Handler:
         self.client.connect(mqttconfig.broker_adress, keepalive=60)
         self.client.subscribe("uhr/on")
         self.client.subscribe("uhr/hsv")
+        self.client.subscribe("uhr/manualbrightness")
         self.client.loop_start()
         self.ledcontroll=ledcontroll
 
