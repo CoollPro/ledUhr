@@ -18,7 +18,7 @@ class MQTT_Handler:
         if topic=="uhr/manualbrightness":
             if msg=="true":
                 self.setflag(True)
-            else msg=="false":
+            elif msg=="false":
                 self.setflag(False)
             
                     
