@@ -132,12 +132,12 @@ class Wrapper:
             self.farbeSekunde=(h/360)+0.3
             self.setAllSaturation(s/100)
         
-    def setFlag (flag):
+    def setFlag (self,flag):
         self.flag=flag
         if flag==True:
             brightness=0.35
 
-    def automaticBrightness(morgen):
+    def automaticBrightness(self,morgen):
         if flag==True:
             if morgen==False:
                 for i in range(101):
