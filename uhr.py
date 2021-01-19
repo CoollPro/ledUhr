@@ -35,9 +35,9 @@ while True:
     
     currentTime=datetime.now(tz)
 
-    if currentTime.second==0 and currentTime.hour>19 and currentTime.hour<23
+    if currentTime.second==0 and currentTime.hour>19 and currentTime.hour<23:
         wrapper.automaticBrightness(False)
-    elif currentTime.second==0 and currentTime.hour>6 and currentTime.hour<10
+    elif currentTime.second==0 and currentTime.hour>6 and currentTime.hour<10:
         wrapper.automaticBrightness(True)
 
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,wrapper.farbeStunde_Miute)
