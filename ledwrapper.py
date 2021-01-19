@@ -128,9 +128,9 @@ class Wrapper:
         
         if self.flag == False:
             self.brightness=v/100
-            self.farbeStunde_Miute=(h/360)
-            self.farbeSekunde=(h/360)+0.3
-            self.setAllSaturation(s/100)
+        self.farbeStunde_Miute=(h/360)
+        self.farbeSekunde=(h/360)+0.3
+        self.setAllSaturation(s/100)
         
     def setFlag (self,flag):
         self.flag=flag
