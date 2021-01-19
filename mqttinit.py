@@ -15,11 +15,19 @@ class MQTT_Handler:
             hsv=msg.split(",")
             self.ledcontroll(int(hsv[0]),int(hsv[1]),int(hsv[2]))
 
+        if topic=="uhr/manualbrightness":
+            if msg=="true":
+                self.setflag(True)
+            else:
+                self.setflag(False)
+            
+                    
+
 
         #self.ledcontroll()
 
 
-    def __init__(self,ledcontroll):
+    def __init__(self,ledcontroll,setflag):
         self.client = mqtt.Client()
         self.client.on_message = self.on_message
         self.client.on_connect = self.on_connect
@@ -29,6 +37,7 @@ class MQTT_Handler:
         self.client.subscribe("uhr/manualbrightness")
         self.client.loop_start()
         self.ledcontroll=ledcontroll
+        self.setflag=setflag
 
     def on_connect(self, client, userdata, flags, rc):
         print("CONNACK")

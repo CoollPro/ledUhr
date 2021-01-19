@@ -26,7 +26,7 @@ wrapper.setAllColour(0.84)
 wrapper.setpixel(((9*8)),0.64,1,0.2)
 wrapper.setpixel((21*8),0.64,1,0.2)
 
-mqtt=mqttinit.MQTT_Handler(wrapper.lichtEinstellen)
+mqtt=mqttinit.MQTT_Handler(wrapper.lichtEinstellen,wrapper.setFlag)
 
 tz = pytz.timezone('Europe/Berlin')
 
@@ -34,6 +34,12 @@ tz = pytz.timezone('Europe/Berlin')
 while True:
     
     currentTime=datetime.now(tz)
+
+    if currentTime.second==0 and currentTime.hour>19 and currentTime.hour<23
+        wrapper.automaticBrightness(False)
+    elif currentTime.second==0 and currentTime.hour>6 and currentTime.hour<10
+        wrapper.automaticBrightness(True)
+
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,wrapper.farbeStunde_Miute)
     wrapper.doppelte_zahl_speichern(currentTime.minute,12,wrapper.farbeStunde_Miute)
     wrapper.doppelte_zahl_speichern(currentTime.second,23,wrapper.farbeSekunde)

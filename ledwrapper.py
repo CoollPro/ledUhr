@@ -1,5 +1,6 @@
 from rpi_ws281x import *
 import colorsys
+import time
 
 class Wrapper:
 
@@ -11,6 +12,7 @@ class Wrapper:
         self.farbeStunde_Miute=0
         self.farbeSekunde=0
         self.brightness=0
+        self.flag=True
 
         for i in range (strip.numPixels()):
             self.ledArray.append([0,0,0])
@@ -123,7 +125,29 @@ class Wrapper:
         self.strip.show()
 
     def lichtEinstellen(self,h,s,v):
-        self.brightness=v/100
-        self.farbeStunde_Miute=(h/360)
-        self.farbeSekunde=(h/360)+0.3
-        self.setAllSaturation(s/100)
+        
+        if self.flag == False:
+            self.brightness=v/100
+            self.farbeStunde_Miute=(h/360)
+            self.farbeSekunde=(h/360)+0.3
+            self.setAllSaturation(s/100)
+        
+    def setFlag (flag):
+        self.flag=flag
+        if flag==True:
+            brightness=0.35
+
+    def automaticBrightness(morgen):
+        if flag==True:
+            if morgen==False:
+                for i in range(101):
+                    self.brightness=self.brightness-0.001
+                    time.sleep(1/110)
+            
+            elif morgen==True:
+                for i in range(101):
+                    self.brightness=self.brightness+0.001
+                    time.sleep(1/110)    
+
+   
+    
