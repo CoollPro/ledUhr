@@ -12,7 +12,8 @@ class Wrapper:
         self.farbeStunde_Miute=0
         self.farbeSekunde=0
         self.brightness=0
-        self.flag=True
+        self.flag
+        self.setFlag(True)
 
         for i in range (strip.numPixels()):
             self.ledArray.append([0,0,0])
