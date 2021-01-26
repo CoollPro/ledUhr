@@ -101,6 +101,10 @@ class Wrapper:
             self.einzel_zahl_speichern(int(self.doppelpack[0]),reihe,farbe)
             self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,farbe)
 
+    def doubledot (self,pos1,pos2):
+        wrapper.setpixel((pos1,0.64,1,self.brightness)
+        wrapper.setpixel(pos2,0.64,1,self.brightness)
+
     def setAllColour (self,h):
         for i in self.ledArray:
             i[0]=h        
@@ -137,8 +141,9 @@ class Wrapper:
         if flag==True:
             self.brightness=0.35
 
+
     def automaticBrightness(self,morgen):
-        if flag==True:
+        if self.flag==True:
             if morgen==False:
                 for i in range(101):
                     self.brightness=self.brightness-0.001
@@ -148,6 +153,3 @@ class Wrapper:
                 for i in range(101):
                     self.brightness=self.brightness+0.001
                     time.sleep(1/110)    
-
-   
-    
