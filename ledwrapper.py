@@ -12,7 +12,7 @@ class Wrapper:
         self.farbeStunde_Miute=0
         self.farbeSekunde=0
         self.brightness=0
-        self.flag
+        self.flag=True
         self.setFlag(True)
 
         for i in range (strip.numPixels()):
