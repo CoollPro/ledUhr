@@ -102,7 +102,7 @@ class Wrapper:
             self.einzel_zahl_speichern(int(self.doppelpack[1]),reihe+5,farbe)
 
     def doubledot (self,pos1,pos2):
-        self.setpixel((pos1,0.64,1,self.brightness)
+        self.setpixel(pos1,0.64,1,self.brightness)
         self.setpixel(pos2,0.64,1,self.brightness)
 
     def setAllColour (self,h):
