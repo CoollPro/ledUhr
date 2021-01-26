@@ -37,12 +37,12 @@ while True:
     currentTime=datetime.now(tz)
 
     if currentTime.second==0 and currentTime.hour>19 and currentTime.minute==0 and currentTime.hour<23:
-        wrapper.automaticBrightness(False)
-        wrapper.doubledot(9*8)
+        wrapper.automaticBrightness(False)      
     elif currentTime.second==0 and currentTime.hour>6 and currentTime.minute==0 and currentTime.hour<10:
         wrapper.automaticBrightness(True)
-        wrapper.doubledot(21*8)
-
+    
+    wrapper.doubledot(21*8)
+    wrapper.doubledot(9*8)
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,wrapper.farbeStunde_Miute)
     wrapper.doppelte_zahl_speichern(currentTime.minute,12,wrapper.farbeStunde_Miute)
     wrapper.doppelte_zahl_speichern(currentTime.second,23,wrapper.farbeSekunde)
