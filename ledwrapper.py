@@ -146,11 +146,7 @@ class Wrapper:
     def automaticBrightness(self,morgen):
         if self.flag==True:
             if morgen==False:
-                for i in range(101):
-                    self.brightness=self.brightness-0.001
-                    time.sleep(1/110)
-            
+                self.brightness=self.brightness-0.100
             elif morgen==True:
-                for i in range(101):
-                    self.brightness=self.brightness+0.001
-                    time.sleep(1/110)    
+                self.brightness=self.brightness+0.100
+                       
