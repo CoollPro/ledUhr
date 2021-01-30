@@ -14,6 +14,8 @@ class Wrapper:
         self.brightness=0
         self.flag=True
         self.setFlag(True)
+        
+
 
         for i in range (strip.numPixels()):
             self.ledArray.append([0,0,0])
@@ -146,7 +148,10 @@ class Wrapper:
     def automaticBrightness(self,morgen):
         if self.flag==True:
             if morgen==False:
-                self.brightness=self.brightness-0.100
+                self.brightness=self.brightness-0.1
             elif morgen==True:
-                self.brightness=self.brightness+0.100
+                self.brightness=self.brightness+0.1
+        while(datetime.now().second==0):
+            time.sleep(0.01)
+
                        
