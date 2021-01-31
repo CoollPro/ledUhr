@@ -151,7 +151,9 @@ class Wrapper:
                 self.brightness=self.brightness-0.1
             elif morgen==True:
                 self.brightness=self.brightness+0.1
+        print(datetime.now().second)        
         while datetime.now().second==0:
             time.sleep(0.01)
+            
 
                        
