@@ -30,7 +30,7 @@ wrapper.setpixel((21*8),0.64,1,0.2)
 mqtt=mqttinit.MQTT_Handler(wrapper.lichtEinstellen,wrapper.setFlag)
 
 tz = pytz.timezone('Europe/Berlin')
-
+wrapper.automaticBrightness(True)
 
 while True:
     
