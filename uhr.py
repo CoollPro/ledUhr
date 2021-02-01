@@ -38,7 +38,7 @@ while True:
 
     if currentTime.second==0 and currentTime.hour>19 and currentTime.minute==0 and currentTime.hour<23:
         wrapper.automaticBrightness(False)      
-    elif currentTime.second==0 and currentTime.hour>6 and currentTime.minute==0 and currentTime.hour<10:
+    elif currentTime.second==0 and currentTime.hour>7 and currentTime.minute==0 and currentTime.hour<11:
         wrapper.automaticBrightness(True)
     
     
