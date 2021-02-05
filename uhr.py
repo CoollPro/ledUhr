@@ -41,6 +41,10 @@ while True:
     elif currentTime.second==0 and currentTime.hour>7 and currentTime.minute==0 and currentTime.hour<11:
         wrapper.automaticBrightness(True)
     
+    if currentTime.second==0 or currentTime.second==30:
+        with open('mqtt.log','a') as fileLog:
+            fileLog.write(str(currentTime)+" "+str(mqtt.getStatus())+"\n")
+            
     
     wrapper.doubledot(9*8,21*8)
     wrapper.doppelte_zahl_speichern(currentTime.hour,0,wrapper.farbeStunde_Miute)
