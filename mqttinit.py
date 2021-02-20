@@ -15,8 +15,8 @@ class MQTT_Handler:
             hsv=msg.split(",")
             self.ledcontroll(int(hsv[0]),int(hsv[1]),int(hsv[2]))
 
-        with open('mqtt.log','a') as fileLog:
-            fileLog.write(text+"\n")
+       # with open('mqtt.log','a') as fileLog:
+       #     fileLog.write(text+"\n")
         
 
         if topic=="uhr/manualbrightness":
