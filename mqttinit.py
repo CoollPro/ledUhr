@@ -6,20 +6,28 @@ import colorsys
 class MQTT_Handler:
 
     def __init__(self,ledcontroll,setflag):
-        self.client = mqtt.Client()
+        self.client = mqtt.Client(client_id="leduhr", clean_session=False)
         self.client.on_message = self.on_message
         self.client.on_connect = self.on_connect
         self.client.on_disconnect=self.onDisconnect
         self.client.connect(mqttconfig.broker_adress, keepalive=60)
+
         self.client.subscribe("lights/andre/leduhr")
         self.client.subscribe("lights/andre/leduhr/switch")
+
         self.client.loop_start()
         self.ledcontroll=ledcontroll
         self.setflag=setflag
         self.isConnected=False
+
         self.last_state=[0,0,0]    
 
     def on_message(self, client, userdata, message):
+        with open('mqtt.log','a') as fileLog:
+           fileLog.write("Msg Received"+"\n")
+	
+        print("Message received")
+
         text = "New message: {}, Topic: {}, QOS: {}, Retain Flag: {}".format(message.payload.decode("utf-8"),
                                                                          message.topic,
                                                                          message.qos,
@@ -48,18 +56,20 @@ class MQTT_Handler:
         if topic=="lights/andre/leduhr/switch":
             self.setflag(json.loads(msg))
             
-                    
+        print("message processed")
 
 
         #self.ledcontroll()
-
+ 
     def on_connect(self, client, userdata, flags, rc):
         print("CONNACK")
         self.isConnected=True
     
     def getStatus(self):
         return self.isConnected
-    def onDisconnect(self,userdata,rc):
+
+    def onDisconnect(self,client,userdata,rc):
+        print("DISCONNECTED")
         self.isConnected=False
         
         
